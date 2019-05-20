@@ -1,0 +1,116 @@
+/*Body*/
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(0, 0, 255);
+  font-family: "Lucida Sans", serif;
+}
+
+/*Wrap*/
+.wrap {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*Menu*/
+nav {
+  margin: 0;
+  background: rgb(204, 204, 0);
+  padding: 10px 0px;
+  width: 25%;
+  position: relative;
+  #menu {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    list-style-type: none;
+    margin: 0;
+    position: relative;
+    padding: 0;
+    li {
+      width: 100%;
+      z-index: 1;
+      position: relative;
+      &:hover > .submenu, &:focus > .submenu {
+        display: flex;
+      }
+      a {
+        &:hover, &:focus {
+          opacity: 0.3;
+          cursor: pointer;
+        }
+        display: block;
+        margin-right: 10px;
+        color: white;
+        text-decoration: none;
+        .active {
+          font-weight: bold;
+        }
+      }
+      .submenu {
+        z-index: 1;
+        margin-left: 220px;
+        top: 0;
+        justify-content: center;
+        list-style-type: none;
+        width: 200px;
+        background: grey;
+        border-radius: 5px;
+        padding: 5px;
+        display: none;
+        position: absolute;
+        li {
+          width: 100%;
+          margin: 0;
+          z-index: 5;
+          padding: 0;
+          a {
+            color: white;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*Content*/
+.content {
+  background: rgba(0, 0, 0, 0.2);
+  width: 75%;
+  .main{
+    padding:0 25px;
+    color:white;
+  }
+}
+
+/*Tite*/
+.title {
+  text-align: center;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  h2 {
+    padding: 5px 5px;
+    margin: 0;
+  }
+}
+
+/*ERROR*/
+#error{
+  color:red;
+}
+.notice{
+  font-size:12px;
+  display:block;
+  margin-bottom:10px;
+}
+
+/*RESERVERINGEN*/
+@import 'reserveringen';
+@import 'bon';
+
+

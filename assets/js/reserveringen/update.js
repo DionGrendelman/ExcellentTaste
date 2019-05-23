@@ -18,6 +18,7 @@ $('#updateReservering').on('submit',function (e) {
             KlantPostcode: $('#klantPostcode').val(),
             KlantWoonplaats: $('#klantWoonplaats').val(),
             KlantLand: $('#klantLand').val(),
+            Opmerkingen: $('#Opmerkingen').val(),
         },
         success: function (data) {
             data = JSON.parse(data);

@@ -69,6 +69,11 @@ if (!isset($_POST['Tafel']) || !$_POST['Tafel']) {
 if (!isset($_POST['Aantal']) || !$_POST['Aantal']) {
     $error .= 'Geen geldige Aantal meegegeven<br>';
 }
+/*Check if Opmerkingen has been posted*/
+
+if (!isset($_POST['Opmerkingen']) || !$_POST['Opmerkingen']) {
+    $error .= 'Geen geldige Opmerkingen meegegeven<br>';
+}
 if (!isset($_POST['KlantValue']) || !$_POST['KlantValue']) {
     $error .= 'Geen geldige Klant Waarde meegegeven<br>';
 } else {
@@ -125,7 +130,7 @@ if ($error == '') {
             $_POST['KlantLand']
         )) {
             /*Save reservering with new klant.*/
-            if ($reserveringen->create($_POST['Datum'], $_POST['Tijd'], $_POST['Tafel'], $klanten->db->id(), $_POST['Aantal'])) {
+            if ($reserveringen->create($_POST['Datum'], $_POST['Tijd'], $_POST['Tafel'], $klanten->db->id(), $_POST['Aantal'],$_POST['Opmerkingen'])) {
                 return_data('success', 'Gelukt!');
             } else {
                 return_data('error', 'Oeps!');
@@ -146,7 +151,7 @@ if ($error == '') {
             $_POST['KlantLand']
         )) {
             /*Adding reservering with excisting klant.*/
-            if ($reserveringen->create($_POST['Datum'], $_POST['Tijd'], $_POST['Tafel'], $_POST['Klant'], $_POST['Aantal'])) {
+            if ($reserveringen->create($_POST['Datum'], $_POST['Tijd'], $_POST['Tafel'], $_POST['Klant'], $_POST['Aantal'],$_POST['Opmerkingen'])) {
                 return_data('success', 'Gelukt!');
             } else {
                 return_data('error', 'Er is al een reservering op deze datum, tijdstip en tafel.');

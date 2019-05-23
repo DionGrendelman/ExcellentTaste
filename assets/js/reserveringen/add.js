@@ -16,6 +16,7 @@ $('#addReservering').on('submit', function (e) {
             KlantPostcode: $('#oldKlantPostcode').val(),
             KlantWoonplaats: $('#oldKlantWoonplaats').val(),
             KlantLand: $('#oldKlantLand').val(),
+            Opmerkingen: $('#Opmerkingen').val(),
         };
     } else {
         var postData = {
@@ -32,6 +33,7 @@ $('#addReservering').on('submit', function (e) {
             KlantPostcode: $('#klantPostcode').val(),
             KlantWoonplaats: $('#klantWoonplaats').val(),
             KlantLand: $('#klantLand').val(),
+            Opmerkingen: $('#Opmerkingen').val(),
         };
     }
     $.ajax({ //Process the form using $.ajax()

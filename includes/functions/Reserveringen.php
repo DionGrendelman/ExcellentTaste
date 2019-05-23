@@ -55,20 +55,21 @@ class Reserveringen
         ]);
         $error = $this->db->error();
         if (!$error[2]) {
-                return true;
+            return true;
         }
         return false;
     }
 
     public
-    function create($date, $time, $table, $klant, $aantal)
+    function create($date, $time, $table, $klant, $aantal, $opmerkingen)
     {
         $data = $this->db->insert('reservering', [
             'Datum' => $date,
             'Tijd' => $time,
             'Tafel' => $table,
             'Klant-id' => $klant,
-            'Aantal' => $aantal
+            'Aantal' => $aantal,
+            'Opmerkingen' => $opmerkingen
         ]);
         $error = $this->db->error();
         if (!$error[2]) {
@@ -78,26 +79,55 @@ class Reserveringen
     }
 
     public
-    function update($date, $time, $table, $klant = null, $aantal = null)
+    function update($date, $time, $table, $klant = null, $aantal = null, $opmerkingen = null)
     {
         if ($klant) {
             if ($aantal) {
-                $data = [
-                    'Klant-id' => $klant,
-                    'Aantal' => $aantal
-                ];
+                if ($opmerkingen) {
+                    $data = [
+                        'Klant-id' => $klant,
+                        'Aantal' => $aantal,
+                        'Opmerkingen' => $opmerkingen
+                    ];
+                } else {
+                    $data = [
+                        'Klant-id' => $klant,
+                        'Aantal' => $aantal
+                    ];
+                }
             } else {
-                $data = [
-                    'Klant-id' => $klant,
-                ];
+                if ($opmerkingen) {
+                    $data = [
+                        'Klant-id' => $klant,
+                        'Opmerkingen' => $opmerkingen
+                    ];
+                } else {
+                    $data = [
+                        'Klant-id' => $klant,
+                    ];
+                }
             }
         } else {
             if ($aantal) {
-                $data = [
-                    'Aantal' => $aantal
-                ];
+                if ($opmerkingen) {
+                    $data = [
+                        'Aantal' => $aantal,
+                        'Opmerkingen' => $opmerkingen
+                    ];
+                } else {
+                    $data = [
+                        'Aantal' => $aantal
+                    ];
+                }
             } else {
-                $data = '';
+                if ($opmerkingen) {
+                    $data = [
+                        'Opmerkingen' => $opmerkingen
+                    ];
+                } else {
+                    $data = '';
+                }
+
             }
         }
 

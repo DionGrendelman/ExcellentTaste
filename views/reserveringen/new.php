@@ -61,6 +61,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/components/header.php';
             <label for="klantLand">Land</label><br><input type="text" name="klantLand" id="klantLand"><br>
         </div>
         <label for="Aantal">Aantal</label><br><input type="text" name="Aantal" id="Aantal"><br>
+        <label for="Opmerkingen">Opmerkingen</label><br><textarea name="Opmerkingen" id="Opmerkingen"></textarea><br>
+
         <button type="submit">Opslaan</button>
     </form>
 

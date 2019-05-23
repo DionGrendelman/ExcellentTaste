@@ -83,12 +83,18 @@ if (!isset($_POST['KlantValue']) || !$_POST['KlantValue']) {
 
 if ($error == '') {
     /*Check if table has been posted*/
-    if (isset($_POST['Klant']) && $_POST['Klant'] || isset($_POST['Aantal']) && $_POST['Aantal']) {
+    if (isset($_POST['Klant']) && $_POST['Klant'] || isset($_POST['Aantal']) && $_POST['Aantal'] || isset($_POST['Opmerkingen']) && $_POST['Opmerkingen']) {
         /*Check if aantal has value*/
         if($_POST['Aantal']){
             $aantal = $_POST['Aantal'];
         } else {
             $aantal = '';
+        }
+
+        if($_POST['Opmerkingen']){
+            $opmerkingen = $_POST['Opmerkingen'];
+        } else {
+            $opmerkingen = '';
         }
         if ($klanten->update(
             $_POST['Klant'],
@@ -101,7 +107,7 @@ if ($error == '') {
             $_POST['KlantLand']
         )) {
             /*Update the reservering*/
-            if ($reserveringen->update($_POST['Datum'], $_POST['Tijd'], $_POST['Tafel'], $_POST['Klant'], $aantal)) {
+            if ($reserveringen->update($_POST['Datum'], $_POST['Tijd'], $_POST['Tafel'], $_POST['Klant'], $aantal,$opmerkingen)) {
                 return_data('success', 'Aangepast!');
             } else {
                 return_data('error', 'Oeps!');

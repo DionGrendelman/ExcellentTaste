@@ -112,7 +112,7 @@ nav {
   margin-bottom:10px;
 }
 
-button,select,input{
+button,select,input,textarea{
   border-radius:5px;
   border:none;
   background:white;
@@ -127,6 +127,9 @@ button,select,input{
     transition: 0.3s;
 
   }
+}
+textarea{
+  margin-bottom: 10px;
 }
 input{
   margin:10px 0px 10px;

@@ -2,13 +2,15 @@
 body {
   margin: 0;
   padding: 0;
-  background: rgb(0, 0, 255);
-  font-family: "Lucida Sans", serif;
+  background: #EEE2DC;
+  font-family: "Roboto", serif;
+  color: #AC3B61!important;
+
 }
 
 /*Wrap*/
 .wrap {
-  width: 90%;
+  width: 100%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -17,9 +19,9 @@ body {
 /*Menu*/
 nav {
   margin: 0;
-  background: rgb(204, 204, 0);
+  background: #EDC7B7;
   padding: 10px 0px;
-  width: 25%;
+  width: 20%;
   position: relative;
   #menu {
     text-align: center;
@@ -44,7 +46,7 @@ nav {
         }
         display: block;
         margin-right: 10px;
-        color: white;
+        color: #AC3B61;
         text-decoration: none;
         .active {
           font-weight: bold;
@@ -79,11 +81,12 @@ nav {
 
 /*Content*/
 .content {
-  background: rgba(0, 0, 0, 0.2);
-  width: 75%;
+  background: rgba(0, 0, 0, 0.05);
+  width: 80%;
+  padding:10px 0px 30px;
   .main{
     padding:0 25px;
-    color:white;
+    color: #AC3B61;
   }
 }
 
@@ -91,8 +94,8 @@ nav {
 .title {
   text-align: center;
   width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
+  background: #e4beae;
+  color: #AC3B61;
   h2 {
     padding: 5px 5px;
     margin: 0;
@@ -109,6 +112,37 @@ nav {
   margin-bottom:10px;
 }
 
+button,select,input{
+  border-radius:5px;
+  border:none;
+  background:white;
+  padding:5px 10px;
+  -webkit-box-shadow: 0px 0px 5px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 5px -3px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px -3px rgba(0,0,0,0.75);
+  transition: 0.3s;
+  &:hover,&:focus{
+    cursor:pointer;
+    background: #f6f6f6;
+    transition: 0.3s;
+
+  }
+}
+input{
+  margin:10px 0px 10px;
+}
+#newReservering{
+  margin-bottom:10px;
+}
+table{
+  border-radius:10px;
+}
+.delete{
+  color:red;
+}
+.edit{
+  color:cornflowerblue;
+}
 /*RESERVERINGEN*/
 @import 'reserveringen';
 @import 'bon';

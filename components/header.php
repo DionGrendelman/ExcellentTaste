@@ -33,6 +33,7 @@
                 <a href="/overzichten">Overzichten</a>
                 <ul class="submenu">
                     <li><a href="/overzichten/barman">Overzicht barman</a></li>
+                    <li><a href="/overzichten/weekomzet">Overzicht weekomzet</a></li>
                 </ul>
             </li>
         </ul>

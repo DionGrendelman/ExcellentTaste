@@ -39,6 +39,9 @@ switch ($request_uri[0]) {
     case '/overzichten/barman/' :
         require_once __DIR__ . '/views/overzichten/barman_bestelling.php';
         break;
+    case '/overzichten/weekomzet' :
+        require_once __DIR__ . '/views/overzichten/weekomzet.php';
+        break;
 
         /*Algemeen*/
     case '/' :

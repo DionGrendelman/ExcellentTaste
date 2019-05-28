@@ -10,6 +10,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/components/header.php';
 <div class="main">
     <h2>Overzichten</h2>
     <button onclick="window.location.href= '/overzichten/barman';">Barman</button>
+    <button onclick="window.location.href= '/overzichten/weekomzet';">Weekomzet</button>
     <br>
 </div>
 

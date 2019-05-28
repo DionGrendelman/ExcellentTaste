@@ -12,6 +12,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/components/header.php';
 
 <div class="main">
     <h2>Reservering toevoegen</h2>
+    <I class="notice">Letop! Je kan geen dubbele reserveringen toevoegen.</I>
     <div id="error"></div>
     <form id="addReservering">
         <label for="Tafel">Tafel</label><br><input type="text" name="Tafel" id="Tafel"><br>
